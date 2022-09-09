@@ -156,3 +156,37 @@ body {
 .article-description {
     font-size: 20px;
 }
+
+.comments-container {
+    padding-top: 70px;
+}
+
+.comment-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.commentator-name {
+    padding: 5px 10px;
+    background-color: #3c3ee1;
+    color: white;
+    max-width: 300px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.commentator-name-left {
+    align-self: flex-start;
+}
+
+.commentator-name-right {
+    align-self: flex-end;
+}
+
+.comment-text {
+    border: 1px solid #3c3ee1;
+    border-radius: 20px;
+    padding: 10px 15px;
+}

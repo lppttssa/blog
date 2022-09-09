@@ -10,7 +10,9 @@
         return {pages, data}
     };
 
-    
+    const updateUrl = (page) => {
+        window.location.search = page !== 1 ? `?page=${page}` : '';
+    }
 
     const createPaginationItem = (number, isAcive) => {
         const paginationElement = document.createElement('span');
@@ -21,7 +23,7 @@
         }
         paginationElement.textContent = number;
         paginationElement.addEventListener('click', () => {
-            window.location.search = `?page=${number}`;
+           updateUrl(number);
         });
         
         return paginationElement;
@@ -63,7 +65,7 @@
 
         const arrowLeft = createArrow('<', currentPage > 1);
         arrowLeft.addEventListener('click', () => {
-            window.location.search = `?page=${--currentPage}`;
+            updateUrl(--currentPage);
         });
         paginationContainer.append(arrowLeft);
         if (currentPage !== 1) {
@@ -85,7 +87,7 @@
         
         const arrowRight = createArrow('>', currentPage < pages);
         arrowRight.addEventListener('click', () => {
-                window.location.search = `?page=${++currentPage}`;
+                updateUrl(++currentPage);
         });
         paginationContainer.append(arrowRight);
 
@@ -129,7 +131,7 @@
     const getPageFromUrl = () => {
         let urlString = window.location.search;
         let searchParams = new URLSearchParams(urlString);
-        return searchParams.get('page');
+        return searchParams.get('page') || 1;
     };
 
     async function createBlog(container) {
