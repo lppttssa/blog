@@ -82,3 +82,59 @@ body {
 .card-btn:active {
     background-color: #2a2cba;
 }
+
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pagination-element {
+    padding: 5px 10px;
+    background-color: #3c3ee1;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pagination-element:hover {
+    background-color: #3032c8;
+}
+
+.pagination-element:active {
+    background-color: #2a2cba;
+}
+
+.pagination-element-active {
+    border: 1px solid #3c3ee1;
+    background-color: transparent;
+    color: #3c3ee1;
+}
+
+.pagination-element-active:hover {
+    border: 1px solid #3032c8;
+    background-color: transparent;
+    color: #3032c8;
+}
+
+.pagination-element-active:active {
+    border: 1px solid #2a2cba;
+    background-color: transparent;
+    color: #2a2cba;
+}
+
+.pagination-dots {
+    font-size: 20px;
+}
+
+.pagination-arrow {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.arrow-disabled {
+    pointer-events: none;
+}
