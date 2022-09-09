@@ -10,6 +10,10 @@ body {
     margin-right: auto;
 }
 
+.container-article {
+    text-align: left;
+}
+
 .text {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -35,6 +39,7 @@ body {
     flex-wrap: wrap;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 40px;
+    margin-bottom: 70px;
 }
 
 .article-card {
@@ -137,4 +142,17 @@ body {
 
 .arrow-disabled {
     pointer-events: none;
+}
+
+.container-article-description {
+    padding-top: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.article-title {
+    margin-bottom: 30px;
+}
+
+.article-description {
+    font-size: 20px;
 }

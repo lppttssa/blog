@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Все статьи</title>
+    <title>Пост</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script defer src="main.js"></script>
+    <script defer src="mainPost.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            createBlog(document.getElementById('blog'));
+            createPost(document.getElementById('post'));
         });
     </script>
 </head>
 <body>
-    <div id="blog" class="container">
-        <h1 class="page-title text">
-            Новости & Статьи
-        </h1>
-        <span class="page-description text">Блог обо всём и ни о чём</span>
+    <div id="post" class="container container-article">
     </div>
 </body>
 </html>

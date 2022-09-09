@@ -25,7 +25,7 @@
         });
         
         return paginationElement;
-    }
+    };
 
     const createPaginationDots = () => {
         const dots = document.createElement('span');
@@ -33,7 +33,7 @@
         dots.textContent = '...';
         
         return dots;
-    }
+    };
 
     const createArrow = (arrowText, isAcive) => {
         const arrow = document.createElement('span');
@@ -43,7 +43,7 @@
             arrow.classList.add('arrow-disabled')
         }
         return arrow;
-    }
+    };
 
     const getFirstShownPage = (currentPage, totalPages) => {
         if (currentPage > 2) {
@@ -54,7 +54,7 @@
             }
         }
         return 1;
-    }
+    };
 
     const createPagination = (pages, currentPage) => {
         const paginationContainer = document.createElement('div');
@@ -98,7 +98,7 @@
     };
 
 
-    const createArticleCard = (title, description) => {
+    const createArticleCard = (title, description, id) => {
         const card = document.createElement('div');
         card.classList.add('article-card');
 
@@ -118,6 +118,9 @@
         btn.classList.add('card-btn');
         btn.classList.add('text');
         btn.textContent = 'Читать далее';
+        btn.addEventListener('click', () => {
+            window.location.href = `post.html?id=${id}`;
+        });
         card.append(btn);
 
         return card;
@@ -127,7 +130,7 @@
         let urlString = window.location.search;
         let searchParams = new URLSearchParams(urlString);
         return searchParams.get('page');
-    }
+    };
 
     async function createBlog(container) {
         const articleContainer = document.createElement('div');
@@ -136,12 +139,12 @@
         const {pages, data} = await getData(getPageFromUrl());
 
         for (let i = 0; i < data.length; i++) {
-            const card = createArticleCard(data[i].title, data[i].body);
+            const card = createArticleCard(data[i].title, data[i].body, data[i].id);
             articleContainer.append(card);
         }
         container.append(articleContainer);
         const pagination = createPagination(pages.pages, pages.page);
         container.append(pagination);
-    }
+    };
     window.createBlog = createBlog;
 })();
